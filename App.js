@@ -17,10 +17,16 @@ import ListingScreen from "./app/components/ListingScreen";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 
+const categories = [
+  { label: "Furniture", value: 1 },
+  { label: "Clothing", value: 2 },
+  { label: "Cameras", value: 3 },
+];
+
 export default function App() {
   return (
     <Screen>
-      <AppPicker icon="apps" placeholder="Category" />
+      <AppPicker items={categories} icon="apps" placeholder="Category" />
       <AppTextInput placeholder="Username" icon="email" />
     </Screen>
   );
