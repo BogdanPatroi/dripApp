@@ -25,6 +25,7 @@ const initialMessages = [
 
 export default function MessagesScreen() {
   const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
 
   const HandleDelete = (message) => {
     // Delete the message from initialMessages array
@@ -49,6 +50,17 @@ export default function MessagesScreen() {
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 3,
+              title: "T2 title",
+              description: "D2 description",
+              image: require("../assets/bogdan.jpg"),
+            },
+          ]);
+        }}
       />
     </Screen>
   );
