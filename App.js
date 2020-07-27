@@ -15,10 +15,12 @@ import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingScreen from "./app/components/ListingScreen";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
   return (
     <Screen>
+      <AppPicker icon="apps" placeholder="Category" />
       <AppTextInput placeholder="Username" icon="email" />
     </Screen>
   );
