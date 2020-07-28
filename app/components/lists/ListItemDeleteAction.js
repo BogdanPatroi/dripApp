@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import colors from "../../config/colors";
 
 export default function ListItemDeleteAction({ onPress }) {
@@ -9,7 +10,7 @@ export default function ListItemDeleteAction({ onPress }) {
       <View style={styles.container}>
         <MaterialCommunityIcons
           name="trash-can"
-          size={40}
+          size={35}
           color={colors.white}
         />
       </View>

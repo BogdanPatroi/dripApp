@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import {
-  StyleSheet,
-  Text,
   View,
+  StyleSheet,
   Image,
   TouchableWithoutFeedback,
   Alert,
@@ -12,20 +11,20 @@ import * as ImagePicker from "expo-image-picker";
 
 import colors from "../config/colors";
 
-export default function ImageInput({ imageUri, onChangeImage }) {
+function ImageInput({ imageUri, onChangeImage }) {
   useEffect(() => {
     requestPermission();
   }, []);
 
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
-    if (!granted) alert("You need to enable permission to access the library");
+    if (!granted) alert("You need to enable permission to access the library.");
   };
 
   const handlePress = () => {
     if (!imageUri) selectImage();
     else
-      Alert.alert("Delete", "Are you sure you want to delete this photo?", [
+      Alert.alert("Delete", "Are you sure you want to delete this image?", [
         { text: "Yes", onPress: () => onChangeImage(null) },
         { text: "No" },
       ]);
@@ -61,16 +60,19 @@ export default function ImageInput({ imageUri, onChangeImage }) {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
     backgroundColor: colors.light,
     borderRadius: 15,
-    justifyContent: "center",
-    alignItems: "center",
     height: 100,
-    width: 100,
+    justifyContent: "center",
+    marginVertical: 10,
     overflow: "hidden",
+    width: 100,
   },
   image: {
-    width: "100%",
     height: "100%",
+    width: "100%",
   },
 });
+
+export default ImageInput;

@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   text: {
-    width: "94%",
+    flex: 1,
   },
   icon: {
     paddingRight: 10,
