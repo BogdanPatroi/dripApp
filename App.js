@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Screen from "./app/components/Screen";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 
 // Basic component
 const Link = () => {
@@ -62,7 +63,7 @@ export default function App() {
     // 5.
     // Import NavigationContainer to wrap up all of above in a container
     <NavigationContainer>
-      <StackNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
