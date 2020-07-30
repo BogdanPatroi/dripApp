@@ -6,7 +6,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import Screen from "./app/components/Screen";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
-import AppNavigator from "./app/navigation/appNavigator";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 // Basic component
 const Link = () => {

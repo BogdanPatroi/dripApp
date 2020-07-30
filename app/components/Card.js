@@ -3,20 +3,23 @@ import { StyleSheet, Text, View, Image } from "react-native";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function Card({ title, subTitle, image }) {
+export default function Card({ title, subTitle, image, onPress }) {
   return (
-    <View style={styles.card}>
-      <Image style={styles.image} source={image} />
-      <View style={styles.detailsContainer}>
-        <AppText style={styles.title} numberOfLines={1}>
-          {title}
-        </AppText>
-        <AppText style={styles.subTitle} numberOfLines={2}>
-          {subTitle}
-        </AppText>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.card}>
+        <Image style={styles.image} source={image} />
+        <View style={styles.detailsContainer}>
+          <AppText style={styles.title} numberOfLines={1}>
+            {title}
+          </AppText>
+          <AppText style={styles.subTitle} numberOfLines={2}>
+            {subTitle}
+          </AppText>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
