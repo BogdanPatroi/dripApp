@@ -5,6 +5,8 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Screen from "./app/components/Screen";
 import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/appNavigator";
 
 // Basic component
 const Link = () => {
@@ -62,8 +64,8 @@ export default function App() {
   return (
     // 5.
     // Import NavigationContainer to wrap up all of above in a container
-    <NavigationContainer>
-      <AuthNavigator />
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
     </NavigationContainer>
   );
 }
