@@ -13,7 +13,7 @@ At this point there is not BackEnd, the data is locally.
 ##### Run each of these commands separately in the terminal:
 
 ```sh
-git clone https://github.com/BogdanPatroi/dripApp.git
+git clone https://github.com/BogdanPatroi/dripApp/tree/517cd563fc820fbdbc91e88eff28962dbbf3d665
 ```
 
 ```sh
