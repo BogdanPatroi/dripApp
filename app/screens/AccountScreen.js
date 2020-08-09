@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
 import Screen from "../components/Screen";
@@ -7,6 +7,8 @@ import colors from "../config/colors";
 import Icon from "../components/Icon";
 import ListItemSeparator from "../components/lists/ListItemSeparator";
 import routes from "../navigation/routes";
+import AuthContext from "../auth/context";
+import { isEmptyArray } from "formik";
 
 const menuItems = [
   {
@@ -27,12 +29,14 @@ const menuItems = [
 ];
 
 export default function AccountScreen({ navigation }) {
+  const { user, setUser } = useContext(AuthContext);
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Bogdan Ion"
-          subTitle="bogdan.patroi@gmail.com"
+          title={user.name}
+          subTitle={user.email}
           image={require("../assets/bogdan.jpg")}
         />
       </View>
@@ -58,6 +62,7 @@ export default function AccountScreen({ navigation }) {
       <ListItem
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        onPress={() => setUser(null)}
       />
     </Screen>
   );
