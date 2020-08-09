@@ -37,6 +37,7 @@ export default function ListingScreen({ navigation }) {
             title={item.title}
             subTitle={"€" + item.price}
             imageUrl={item.images[0].url}
+            thumbnailUrl={item.images[0].thumbnailUrl}
             onPress={() => navigation.navigate(routes.LISTIING_DETAILS, item)}
           />
         )}
